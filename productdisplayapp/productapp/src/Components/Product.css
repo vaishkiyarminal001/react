@@ -1,0 +1,11 @@
+#cotainer{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 5px;
+}
+
+#cotainer > div{
+    border: 1px solid red;
+    
+}
