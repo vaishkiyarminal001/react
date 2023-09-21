@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Todo.css"; 
 
 export const Todo = () =>{
 
@@ -12,13 +13,13 @@ export const Todo = () =>{
    useEffect(()=>{
         Display();
 
-    },[loading,filter]);
+    },[loading,filter,]);
 
 
     // display things function
 
     const Display = async() =>{
-    let url=`https://jsonplaceholder.typicode.com/todos`
+    let url=`http://localhost:3000/todo`
 
     if(filter==="truehai"){
         url+="?completed=true"
@@ -26,6 +27,7 @@ export const Todo = () =>{
     if(filter==="falsehai"){
         url+="?completed=false"
     }
+    
         const res = await fetch(url);
         const data = await res.json();
         setState(data);
@@ -42,11 +44,40 @@ export const Todo = () =>{
         setFilter(e.target.value)
     }
 
+    // loading 
     if(loading){
         return(
-            <img src="https://media.tenor.com/FBeNVFjn-EkAAAAC/ben-redblock-loading.gif" alt=""/>
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6e0b072897469.5bf6e79950d23.gif" alt=""/>
         )
 
+    }
+
+    // delete method 
+
+    const handleDelete = (id) =>{
+
+        fetch(`http://localhost:3000/todo/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) {
+
+          console.log(`Item with ID ${id} deleted successfully.`);
+          // Optionally, update your local state or perform other actions
+
+          setState((prevState) => prevState.filter((item) => item.id !== id));
+
+        } else {
+          console.error(`Error deleting item with ID ${id}.`);
+          // Handle errors here
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+
+        console.log(id);
     }
 
     return(
@@ -64,9 +95,12 @@ export const Todo = () =>{
 
                     return(
                         <div>
-                            <h1>title : {e.title}</h1>
-                            <h3>userId : {e.userId}</h3>
-                            <h4>completed {e.completed ? "True" : "False"}</h4>
+                            <h2>Id : {e.id}</h2>
+                            <h1>Title : {e.title}</h1>
+                            <h3>Level : {e.level}</h3>
+                            <h4>Completed : {e.completed ? "Yes" : "No"}</h4>
+
+                            <button onClick={()=>{handleDelete(e.id)}}>Delete</button>
 
                         </div>
                     )

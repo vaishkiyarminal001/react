@@ -1,0 +1,23 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "title": "DSA",
+      "level": "Hard",
+      "completed": true
+    },
+    {
+      "title": "Coding",
+      "level": "Medium",
+      "complete": false,
+      "id": 2
+    }
+  ],
+  "Personal": [
+    {
+      "id": 1,
+      "title": "Sleeping",
+      "completed": false
+    }
+  ]
+}

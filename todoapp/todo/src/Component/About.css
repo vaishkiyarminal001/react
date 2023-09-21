@@ -1,0 +1,40 @@
+/* Todo.css or About.css */
+
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .about-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .about-list {
+    margin-top: 20px;
+  }
+  
+  .about-list-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Optional: Add styling to links */
+  .about-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .about-link:hover {
+    color: #0056b3; /* Darker blue color on hover */
+  }
+  
