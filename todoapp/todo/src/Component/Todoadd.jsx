@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./Todo.css";
+import { Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { myAuthContext } from "./Context/AuthContextProvider";
 
 export const Todoadd = () =>{
 
@@ -9,8 +12,9 @@ export const Todoadd = () =>{
         complete:false
     });
 
-    // console.log(state);
+   
     
+    const {login,logout,isAuth} = useContext(myAuthContext);
     // input
 
     const handleInput=(e) =>{
@@ -31,11 +35,15 @@ export const Todoadd = () =>{
            .then((data)=> console.log(data));
 
            alert("Successfully Post");
-        
+           
     }
 
-    
+  
 
+
+    if(!isAuth){
+        return <Navigate to="/login"/>
+    }
 
     
     return(

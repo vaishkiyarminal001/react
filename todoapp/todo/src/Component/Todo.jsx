@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import "./Todo.css"; 
+import { useContext } from "react";
+import { myAuthContext } from "./Context/AuthContextProvider";
+
 
 export const Todo = () =>{
 
     const [state, setState] = useState([]);
     const [loading, setLoad] = useState(true);
     const [filter, setFilter] = useState("");
+    const {logout, isAuth} = useContext(myAuthContext);
+    console.log(isAuth);
 
     // console.log(state);
-    console.log(filter);
+    console.log(loading);
 
    useEffect(()=>{
         Display();
@@ -80,6 +85,10 @@ export const Todo = () =>{
         console.log(id);
     }
 
+   
+
+
+
     return(
         <div>
         <h1>ToDo App</h1>
@@ -88,6 +97,7 @@ export const Todo = () =>{
             <option value="truehai">Completed</option>
             <option value="falsehai">Not Completed</option>
         </select>
+        <button onChange={()=>{logout()}}>Logout</button>
         <div>
 
             {

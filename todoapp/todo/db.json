@@ -1,16 +1,52 @@
 {
   "todo": [
     {
-      "id": 1,
-      "title": "DSA",
-      "level": "Hard",
-      "completed": true
-    },
-    {
       "title": "Coding",
       "level": "Medium",
       "complete": false,
       "id": 2
+    },
+    {
+      "title": "English",
+      "level": "Easy",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "title": "Hindi",
+      "level": "Tough",
+      "complete": false,
+      "id": 4
+    },
+    {
+      "title": "das",
+      "level": "Low",
+      "complete": false,
+      "id": 5
+    },
+    {
+      "title": "math",
+      "level": "Hard2",
+      "complete": false,
+      "id": 6
+    },
+    {
+      "title": "eng",
+      "level": "Hard2",
+      "complete": false,
+      "id": 7
+    },
+    {
+      "title": "hin",
+      "level": "Very Hard",
+      "complete": false,
+      "id": 8
+    },
+    {
+      "title": "",
+      "level": "",
+      "complete": false,
+      "id": 9
     }
   ],
   "Personal": [
