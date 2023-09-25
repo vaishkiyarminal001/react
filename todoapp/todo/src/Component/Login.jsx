@@ -11,8 +11,8 @@ export const Login = () =>{
     const [statepass, setPassword] = useState("");
     // console.log(statepass);
 
-    const {login,isAuth} = useContext(myAuthContext);
-    // console.log(isAuth)
+    const {login,logout,isAuth} = useContext(myAuthContext);
+    //  console.log(isAuth)
   
     // login function
     const onEmail =(e) =>{
@@ -26,7 +26,7 @@ export const Login = () =>{
     const PostHandle = ()=>{
         if(stateemail === "admin" && statepass === "123"){
             // alert("Login Successfull");
-            login(true)
+            login()
           
 
         }else {

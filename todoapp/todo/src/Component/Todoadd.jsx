@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./Todo.css";
 import { Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { myAuthContext } from "./Context/AuthContextProvider";
+
 
 export const Todoadd = () =>{
 
@@ -14,7 +13,7 @@ export const Todoadd = () =>{
 
    
     
-    const {login,logout,isAuth} = useContext(myAuthContext);
+  
     // input
 
     const handleInput=(e) =>{
@@ -41,9 +40,7 @@ export const Todoadd = () =>{
   
 
 
-    if(!isAuth){
-        return <Navigate to="/login"/>
-    }
+   
 
     
     return(

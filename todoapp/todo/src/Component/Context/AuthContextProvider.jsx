@@ -9,11 +9,12 @@ const [isAuth, setIsAuth] = useState(false);
 
 
 const login = ()=>{
-
+  
     setIsAuth(true);
 }
 
 const logout = ()=>{
+    console.log("Logout button clicked"); 
     setIsAuth(false);
 }
 

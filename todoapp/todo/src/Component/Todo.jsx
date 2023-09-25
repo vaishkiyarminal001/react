@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Todo.css"; 
 import { useContext } from "react";
-import { myAuthContext } from "./Context/AuthContextProvider";
+import {myAuthContext} from "../Component/Context/AuthContextProvider"
 
 
 export const Todo = () =>{
@@ -13,12 +13,12 @@ export const Todo = () =>{
     console.log(isAuth);
 
     // console.log(state);
-    console.log(loading);
+    // console.log(loading);
 
    useEffect(()=>{
         Display();
 
-    },[loading,filter,]);
+    },[loading,filter]);
 
 
     // display things function
@@ -97,7 +97,7 @@ export const Todo = () =>{
             <option value="truehai">Completed</option>
             <option value="falsehai">Not Completed</option>
         </select>
-        <button onChange={()=>{logout()}}>Logout</button>
+        {/* <button onClick={logout}>Logout</button> */}
         <div>
 
             {
