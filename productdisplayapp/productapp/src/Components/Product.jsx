@@ -24,7 +24,7 @@ export const Product = () =>{
     },[filter, loading,sort,page]);
 
     const ProductDisplayApi = async() =>{
-        let url = `http://localhost:8080/Product`;
+        let url = `http://localhost:8080/details`;
 
         // filter
 
@@ -111,7 +111,7 @@ export const Product = () =>{
                         <img src={e.image} alt="error" width="200px"/> 
                          <h2>{e.title}</h2>   
                          <p>price: {e.price}</p> 
-                         <p>descroption: {e.descroption}</p> 
+                         <p>description: {e.description}</p> 
                          <p>category: {e.category}</p>
                     
                           

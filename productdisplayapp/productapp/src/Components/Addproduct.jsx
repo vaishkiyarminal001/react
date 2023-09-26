@@ -26,7 +26,7 @@ export const Addproduct = () =>{
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify(state),
            };
-           fetch("http://localhost:8080/Product", requestOptions)
+           fetch("http://localhost:8080/post", requestOptions)
            .then((response)=> response.json())
            .then((data)=> console.log(data));
 
